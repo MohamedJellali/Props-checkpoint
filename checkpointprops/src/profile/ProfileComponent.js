@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types";
+import "../App.css";
 
 
 export default function ProfileComponent(props) {
@@ -11,12 +12,13 @@ export default function ProfileComponent(props) {
 
     return (
         <div>
-             {console.log(props.children)}
+            {console.log(props.children)}
             <h1  style={{color: "red"}}>I am {props.name}</h1>
-            <img src={props.img} alt="Van-gogh" height="420" style={{marginBottom : 20, marginTop : 10, borderRadius:17}} />
+            <div>{props.children}</div>
             <p>I am a {props.bio}</p>
             <p>I am a {props.profession}</p>
-            <button style={{backgroundColor:"#0BEFEC"}} onClick={nameOfUser}> // ClickMe // </button>
+            <button style={{backgroundColor:"#0BEFEC"}} onClick={nameOfUser}>  Display my name </button>
+   
         </div>
     )
 }
