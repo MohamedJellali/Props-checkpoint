@@ -5,7 +5,7 @@ import "../App.css";
 
 export default function ProfileComponent(props) {
 
-    function nameOfUser(props) {
+    function handelName(props) {
         const {name="Vincent Van-Gogh"} = props;
         alert(`My name is ` + name);
       }
@@ -15,9 +15,9 @@ export default function ProfileComponent(props) {
             {console.log(props.children)}
             <h1  style={{color: "red"}}>I am {props.name}</h1>
             <div>{props.children}</div>
-            <p>I am a {props.bio}</p>
+            <p style={{backgroundColor:"#0BEFEC"}} >I am a {props.bio}</p>
             <p>I am a {props.profession}</p>
-            <button style={{backgroundColor:"#0BEFEC"}} onClick={nameOfUser}>  Display my name </button>
+            <button style={{backgroundColor:"#0BEFEC"}} onClick={handelName}>  Display my name </button>
    
         </div>
     )
@@ -34,7 +34,7 @@ ProfileComponent.propTypes = {
     bio: PropTypes.string.isRequired,
     profession: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
-    nameOfUser: PropTypes.func
+    handelName: PropTypes.func
   };
 
 
