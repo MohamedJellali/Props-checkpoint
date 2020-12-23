@@ -5,10 +5,7 @@ import "../App.css";
 
 export default function ProfileComponent(props) {
 
-    function handelName(props) {
-        const {name="Vincent Van-Gogh"} = props;
-        alert(`My name is ` + name);
-      }
+   
 
     return (
         <div>
@@ -17,7 +14,7 @@ export default function ProfileComponent(props) {
             <div>{props.children}</div>
             <p style={{backgroundColor:"#0BEFEC"}} >I am a {props.bio}</p>
             <p>I am a {props.profession}</p>
-            <button style={{backgroundColor:"#0BEFEC"}} onClick={handelName}>  Display my name </button>
+            <button style={{backgroundColor:"#0BEFEC"}} onClick={()=> props.handelName(props.name)}>  Display my name </button>
    
         </div>
     )
