@@ -1,40 +1,29 @@
-import React from 'react'
-import PropTypes from "prop-types";
-import "../App.css";
 
+import './App.css';
+import ProfileComponent from './profile/ProfileComponent';
 
-export default function ProfileComponent(props) {
+function App() {
+  function handelName(x) {
+  
+    alert(`My name is ` + x);
+  }
+  return (
+    
+    <div className="App">
 
-   
+      <ProfileComponent 
+      name="Vincent Van-Gogh" 
+      bio="Dutch painter, generally considered the greatest, and one of the greatest of the Post-Impressionists" 
+      profession="painter" 
+      handelName={handelName}
+      > 
+      <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ekhDtjfbUjaE4HAGsizdqtFEbBnCPZGcmg&usqp=CAU" alt="Van-gogh" height="420" style={{marginBottom : 20, marginTop : 10, borderRadius:17}} />
+      </div>
+      </ProfileComponent>
 
-    return (
-        <div>
-            {console.log(props.children)}
-            <h1  style={{color: "red"}}>I am {props.name}</h1>
-            <div>{props.children}</div>
-            <p style={{backgroundColor:"#0BEFEC"}} >I am a {props.bio}</p>
-            <p>I am a {props.profession}</p>
-            <button style={{backgroundColor:"#0BEFEC"}} onClick={()=> props.handelName(props.name)}>  Display my name </button>
-   
-        </div>
-    )
+    </div>
+  );
 }
 
-ProfileComponent.defaultProps = {
-    name: "Give me a name :,(",
-    Bio:"Write my life :,(",
-    Profession:"Who is me :,(",
-    };
-
-ProfileComponent.propTypes = {
-    name: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
-    profession: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    handelName: PropTypes.func
-  };
-
-
-
-
-
+export default App;
